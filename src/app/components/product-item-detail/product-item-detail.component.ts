@@ -24,10 +24,12 @@ export class ProductItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.productsService.getProducts().subscribe(res => {
-        this.product = res.find(p => p.id == params['id']) as Product;
-      });
+      this.product = this.productsService.getProducts().find(p => p.id == params['id']) as Product;
     });
+  }
+
+  setAmount(newValue: string): void {
+    this.product.amount = parseInt(newValue);
   }
 
 }

@@ -8,9 +8,20 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductsService {
-
-  constructor(private http: HttpClient) { }
-  getProducts(): Observable<Product[]> {
+  products: Product[];
+  constructor(private http: HttpClient) {
+    this.products = [];
+    this.fetchProducts().subscribe(res => {
+      this.products = res.map(p => {
+        p.amount = 1;
+        return p as Product;
+      });
+    });
+  }
+  fetchProducts(): Observable<Product[]> {
     return this.http.get("./assets/data.json") as Observable<Product[]>;
+  }
+  getProducts(): Product[] {
+    return this.products
   }
 }

@@ -25,4 +25,8 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setAmount(newValue: string): void {
+    this.product.amount = parseInt(newValue);
+  }
+
 }
