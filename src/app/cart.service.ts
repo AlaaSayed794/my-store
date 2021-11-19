@@ -12,7 +12,7 @@ export class CartService {
   }
 
   addToCart(newProduct: Product): Product[] {
-    const product: Product = this.cart.find((p: Product) => p.id === product.id) as Product
+    const product: Product = this.cart.find((p: Product) => p.id === newProduct.id) as Product
     if (product) {
       this.cart = this.cart.map((p: Product) => {
         if (p.id == newProduct.id) {
