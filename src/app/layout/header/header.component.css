@@ -7,4 +7,8 @@
 
 a {
   color: #ffffff;
+  padding: 12px;
+  margin: 50px;
+  border: 1px solid royalblue;
+  border-radius:50px;
 }
