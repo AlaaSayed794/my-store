@@ -1,8 +1,8 @@
 // reference link https://stackoverflow.com/questions/58595593/7-8-dynamic-routes
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { CartService } from 'src/app/cart.service';
-import { ProductsService } from 'src/app/products.service';
+import { CartService } from 'src/app/services/cart.service';
+import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/types/product';
 
 @Component({
