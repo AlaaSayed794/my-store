@@ -6,6 +6,9 @@ MyStore is Angular application that allows users to view a list of available pro
 
 Clone the repository and open terminal there and type `npm install`
 
+## Running the project
+
+run `ng serve --port ${portNumber}` , running without --port flag will use angular default port
 
 ## Project features
 
