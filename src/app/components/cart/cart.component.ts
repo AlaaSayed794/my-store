@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
+import { Order } from 'src/app/types/order';
 import { Product } from 'src/app/types/product';
 
 @Component({
@@ -13,7 +16,7 @@ export class CartComponent implements OnInit {
   address: string = '';
   cardNumber: string = '';
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private orderService: OrderService, private router: Router) {
     this.cart = [];
   }
 
@@ -35,9 +38,17 @@ export class CartComponent implements OnInit {
   }
 
   submitForm(): void {
-
+    const order: Order = {
+      username: this.username,
+      address: this.address,
+      price: this.getTotalPrice(),
+      products: this.cart
+    }
+    this.orderService.setOrder(order)
+    this.cartService.resetCart()
     this.username = '';
     this.address = '';
     this.cardNumber = '';
+    this.router.navigate(['/confirmation']);
   }
 }

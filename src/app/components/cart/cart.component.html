@@ -17,7 +17,7 @@ https://angular.io/api/forms/Validators
                 placeholder="Enter your name" #userInput="ngModel">
             <textarea type="text" name="address" required minlength="16" [(ngModel)]="address"
                 placeholder="Enter your address" #userAddress="ngModel"></textarea>
-            <input type="number" name="cardNumber" required pattern="\d{8}" [(ngModel)]="cardNumber"
+            <input type="text" name="cardNumber" required pattern="^[0-9]{8}$" [(ngModel)]="cardNumber"
                 placeholder="Enter your card number" #userCard="ngModel" />
             <input type="submit" [disabled]="form.invalid" value="checkout">
         </form>
