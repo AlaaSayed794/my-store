@@ -20,3 +20,18 @@
   justify-content: center;
   margin-top: 64px;
 }
+
+.form-margin {
+  margin-bottom: 12px;
+}
+.number-input {
+  width: 80px;
+  text-align: center;
+}
+
+input {
+  margin: 10px;
+}
+textarea {
+  margin: 10px;
+}

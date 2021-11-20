@@ -3,10 +3,6 @@ img {
     border-radius: 10px;
   }
   
-  .form-margin {
-    margin-bottom: 12px;
-  }
-  
   .cart-item {
     display: flex;
     flex-direction: row;
@@ -21,10 +17,7 @@ img {
     margin-left: 80px;
   }
   
-  .number-input {
-    width: 80px;
-    text-align: center;
-  }
+  
   
   .cart-panel {
     margin-left: 50px;

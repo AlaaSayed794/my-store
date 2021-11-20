@@ -12,16 +12,13 @@ https://angular.io/api/forms/Validators
     </div>
     <div class="cart-container">
         <h2>total price = ${{getTotalPrice()}}</h2>
-        <form #form="ngForm" (ngSubmit)="submitForm()">
+        <form #form="ngForm" (ngSubmit)="submitForm()" class="form-margin cart-container">
             <input type="text" name="username" required minlength="8" maxlength="32" [(ngModel)]="username"
                 placeholder="Enter your name" #userInput="ngModel">
-            <br>
             <textarea type="text" name="address" required minlength="16" [(ngModel)]="address"
                 placeholder="Enter your address" #userAddress="ngModel"></textarea>
-            <br>
             <input type="number" name="cardNumber" required pattern="\d{8}" [(ngModel)]="cardNumber"
                 placeholder="Enter your card number" #userCard="ngModel" />
-            <br>
             <input type="submit" [disabled]="form.invalid" value="checkout">
         </form>
         <div class="form-error" *ngIf="userInput.invalid && userInput.dirty">
