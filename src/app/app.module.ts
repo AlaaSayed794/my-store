@@ -11,6 +11,7 @@ import { ProductItemDetailComponent } from './components/product-item-detail/pro
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartProductItemComponent } from './components/cart-product-item/cart-product-item.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductItemComponent,
     ProductItemDetailComponent,
     ProductListComponent,
-    HeaderComponent],
+    HeaderComponent,
+    CartProductItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -28,7 +28,9 @@ export class CartService {
   }
 
   removeFromCart(product: Product): Product[] {
-    this.cart = this.cart.filter(p => p.id === product.id)
+    console.log(product)
+    this.cart = this.cart.filter(p => p.id !== product.id)
+    console.log(this.cart)
     return this.cart
   }
 
@@ -37,5 +39,8 @@ export class CartService {
     return this.cart
   }
 
+  getCart(): Product[] {
+    return this.cart
+  }
 
 }

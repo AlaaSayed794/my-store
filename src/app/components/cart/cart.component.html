@@ -1,1 +1,13 @@
-<p>cart works!</p>
+<!-- reference :https://www.techiediaries.com/angular-conditional-rendering-example-with-ngif-directive/ -->
+
+<h1 *ngIf="!cart.length" class="empty-cart-message">your cart is empty, please add some items</h1>
+<div *ngIf="cart.length" class="container">
+    <div class="cart-container">
+        <app-cart-product-item *ngFor="let product of cart" [product]="product"
+            (removeFromCart)="removeFromCart($event)">
+        </app-cart-product-item>
+    </div>
+    <div class="cart-container">
+        <h2>total price = ${{getTotalPrice()}}</h2>
+    </div>
+</div>
