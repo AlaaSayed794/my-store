@@ -9,6 +9,10 @@ import { Product } from 'src/app/types/product';
 })
 export class CartComponent implements OnInit {
   cart: Product[];
+  username: string = '';
+  address: string = '';
+  cardNumber: string = '';
+
   constructor(private cartService: CartService) {
     this.cart = [];
   }
@@ -28,5 +32,12 @@ export class CartComponent implements OnInit {
       return accumalator;
     }, 0)
     return price;
+  }
+
+  submitForm(): void {
+
+    this.username = '';
+    this.address = '';
+    this.cardNumber = '';
   }
 }
